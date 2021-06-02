@@ -1,6 +1,21 @@
-import { PlasmicCanvasHost } from "@plasmicapp/host";
+import { PlasmicCanvasHost, registerComponent } from "@plasmicapp/host";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { ReactNode } from "react";
+
+export function Badge({ children }) {
+  return (
+    <div>
+      Howdy, <span>{children}</span>
+    </div>
+  );
+}
+
+registerComponent(Badge, {
+  name: "Badge",
+  importPath: __filename,
+  props: {},
+});
 
 export default function Home() {
   return (
